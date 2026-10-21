@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Our School | SMC Moodbidri, D.K.</title>
+  <style>
+    :root {
+      --green: #1a5d49;
+      --green-dark: #134835;
+      --text: #17392d;
+      --card: rgba(255, 255, 255, 0.82);
+      --shadow: rgba(21, 59, 47, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 36px 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.72)),
+        url("school-background.png") center / cover fixed no-repeat;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 24px;
+      background: var(--card);
+      box-shadow: 0 18px 45px var(--shadow);
+      backdrop-filter: blur(2px);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 24px 36px;
+      border-bottom: 1px solid rgba(23, 88, 72, 0.12);
+      background: rgba(255, 255, 255, 0.42);
+    }
+
+    .brand,
+    nav a,
+    .back-link {
+      color: var(--green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .brand {
+      color: var(--green-dark);
+      font-size: clamp(1.3rem, 2vw, 2rem);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    main {
+      padding: 42px 36px 48px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      color: var(--green-dark);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+    }
+
+    .intro {
+      margin: 0 0 30px;
+      color: #35524d;
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    figure {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid rgba(23, 88, 72, 0.14);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 10px 24px rgba(19, 72, 53, 0.1);
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    figcaption {
+      padding: 14px 16px;
+      color: var(--green-dark);
+      font-weight: 700;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 13px 18px;
+      border-radius: 12px;
+      background: var(--green);
+      color: #fff;
+    }
+
+    .back-link:hover {
+      background: var(--green-dark);
+    }
+
+    @media (max-width: 780px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      main {
+        padding: 32px 24px 38px;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 16px 0;
+      }
+
+      header {
+        padding: 22px 24px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      figure img {
+        height: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="first.html">SMC MOODBIDRI</a>
+      <nav aria-label="Main navigation">
+        <a href="about-school.html">About</a>
+        <a href="our-campus.html">Campus</a>
+        <a href="discover-our-school.html" aria-current="page">Discover</a>
+        <a href="teaching-staff.html">Staff</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Discover Our School</h1>
+      <p class="intro">Explore our school, meet our staff, and discover campus life.</p>
+
+      <section class="gallery" aria-label="School photos">
+        <figure>
+          <img src="download.jpg" alt="Students using equipment in the school gymnasium">
+          <figcaption>Gymnasium</figcaption>
+        </figure>
+        <figure>
+          <img src="images (1).jpg" alt="The school building and entrance">
+          <figcaption>Our School</figcaption>
+        </figure>
+        <figure>
+          <img src="images (2).jpg" alt="Students in uniform gathered on the school field">
+          <figcaption>Student Activities</figcaption>
+        </figure>
+        <figure>
+          <img src="images (3).jpg" alt="Students taking part in a sports activity">
+          <figcaption>Sports and Activities</figcaption>
+        </figure>
+        <figure>
+          <img src="images (4).jpg" alt="A school building surrounded by trees">
+          <figcaption>Campus</figcaption>
+        </figure>
+        <figure>
+          <img src="images (5).jpg" alt="A group of students and staff gathered outdoors">
+          <figcaption>Our School Community</figcaption>
+        </figure>
+        <figure>
+          <img src="images (6).jpg" alt="Students studying in the school library">
+          <figcaption>Library</figcaption>
+        </figure>
+        <figure>
+          <img src="images.jpg" alt="Students taking part in an outdoor sports activity">
+          <figcaption>Outdoor Sports</figcaption>
+        </figure>
+      </section>
+
+      <a class="back-link" href="first.html">Back to Home</a>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f9f3">
+  <title>Science Department | Teaching Staff | SMC Moodbidri</title>
+  <style>
+    :root {
+      --green: #1a5d49;
+      --green-dark: #134835;
+      --light: #f7f9f3;
+      --text: #17392d;
+      --card: rgba(255, 255, 255, 0.82);
+      --shadow: rgba(21, 59, 47, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1px 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.72)),
+        url("school-background.png") center / cover fixed no-repeat;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 36px auto;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 24px;
+      background: var(--card);
+      box-shadow: 0 18px 45px var(--shadow);
+      backdrop-filter: blur(2px);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 36px;
+      border-bottom: 1px solid rgba(23, 88, 72, 0.12);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .brand {
+      color: var(--green-dark);
+      font-size: clamp(1.3rem, 2vw, 2rem);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--green-dark);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    main {
+      padding: 42px 36px 48px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      color: var(--green-dark);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+    }
+
+    .intro {
+      margin: 0 0 36px;
+      color: #35524d;
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    .department {
+      margin-top: 38px;
+    }
+
+    .department h2 {
+      margin: 0 0 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(23, 88, 72, 0.18);
+      color: var(--green-dark);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .staff-card {
+      overflow: hidden;
+      border: 1px solid rgba(23, 88, 72, 0.14);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 10px 24px rgba(19, 72, 53, 0.1);
+    }
+
+    .staff-card img {
+      display: block;
+      width: 100%;
+      height: 280px;
+      background: #e8eee8;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    .staff-info {
+      padding: 18px;
+    }
+
+    .staff-info h3 {
+      margin: 0 0 8px;
+      color: var(--green-dark);
+      font-size: 1.15rem;
+      line-height: 1.4;
+    }
+
+    .staff-info p {
+      margin: 0;
+      color: #496057;
+      line-height: 1.6;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 36px;
+      padding: 14px 20px;
+      border-radius: 12px;
+      background: var(--green);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      transform: translateY(-2px);
+      background: var(--green-dark);
+    }
+
+    @media (max-width: 780px) {
+      .container {
+        margin: 24px auto;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+      }
+
+      main {
+        padding: 32px 24px 38px;
+      }
+
+      .staff-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .staff-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .staff-card img {
+        height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="first.html">SMC MOODBIDRI</a>
+      <nav aria-label="Main navigation">
+        <a href="about-school.html">About</a>
+        <a href="our-campus.html">Campus</a>
+        <a href="discover-our-school.html">Discover</a>
+        <a href="teaching-staff.html" aria-current="page">Staff</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Science Department</h1>
+      <p class="intro">
+        Meet the teachers who guide our students in Physics, Chemistry,
+        Mathematics, Statistics, Computer Science, and Biology.
+      </p>
+
+      <section class="department" aria-labelledby="physics-heading">
+        <h2 id="physics-heading">Physics</h2>
+        <div class="staff-grid">
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2022/02/2.-Mrs.-Chaithra-Physics-1.jpg" alt="Mrs. Chaithra C">
+            <div class="staff-info">
+              <h3>Mrs. Chaithra C</h3>
+              <p>Qualification: MSc., B.Ed.</p>
+            </div>
+          </article>
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-11-at-11.09.52-AM.jpeg" alt="Ms. Navya">
+            <div class="staff-info">
+              <h3>Ms. Navya</h3>
+              <p>Qualification: M.Sc</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="department" aria-labelledby="chemistry-heading">
+        <h2 id="chemistry-heading">Chemistry</h2>
+        <div class="staff-grid">
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2025/07/ashwitha-1.jpg" alt="Ms. Ashwitha Acharya">
+            <div class="staff-info">
+              <h3>Ms. Ashwitha Acharya</h3>
+              <p>Qualification: MSc Organic Chemistry, B.Ed, K-Set</p>
+            </div>
+          </article>
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2026/06/9.-Ms.-Chithra-S.B.jpeg" alt="Ms. Chithra S B">
+            <div class="staff-info">
+              <h3>Ms. Chithra S B</h3>
+              <p>Qualification: MSc Organic Chemistry</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="department" aria-labelledby="mathematics-heading">
+        <h2 id="mathematics-heading">Mathematics</h2>
+        <div class="staff-grid">
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2023/07/1-2-300x320.jpg" alt="Dr. Harish H">
+            <div class="staff-info">
+              <h3>Dr. Harish H, H.O.D</h3>
+              <p>Qualification: M.SC., KSET., B.Ed., Ph.D</p>
+            </div>
+          </article>
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2022/02/2.-Mrs.-Supritha-Maths.jpg" alt="Mrs. Supritha">
+            <div class="staff-info">
+              <h3>Mrs. Supritha</h3>
+              <p>Qualification: M.Sc., B.Ed.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="department" aria-labelledby="statistics-heading">
+        <h2 id="statistics-heading">Statistics</h2>
+        <div class="staff-grid">
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2026/09/Mamasa-photo-761x1024.jpeg" alt="Ms. Manasa">
+            <div class="staff-info">
+              <h3>Ms. Manasa</h3>
+              <p>Qualification: M.Sc.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="department" aria-labelledby="computer-science-heading">
+        <h2 id="computer-science-heading">Computer Science</h2>
+        <div class="staff-grid">
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-04-at-9.51.28-AM-e1720071352216.jpeg" alt="Ms. Keerthala">
+            <div class="staff-info">
+              <h3>Ms. Keerthala</h3>
+              <p>Qualification: M.Sc.</p>
+            </div>
+          </article>
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2023/07/DSC_0073-1.jpg" alt="Mrs. Radhika Rao">
+            <div class="staff-info">
+              <h3>Mrs. Radhika Rao</h3>
+              <p>Qualification: M.Sc.</p>
+            </div>
+          </article>
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-04-at-9.50.19-AM-e1720071541273.jpeg" alt="Ms. Deeksha">
+            <div class="staff-info">
+              <h3>Ms. Deeksha</h3>
+              <p>Qualification: BCA</p>
+            </div>
+          </article>
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2026/06/IMG_20260612_113931.jpg-768x1024.jpeg" alt="Ms. Nikshitha">
+            <div class="staff-info">
+              <h3>Ms. Nikshitha</h3>
+              <p>Qualification: MCA</p>
+            </div>
+          </article>
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-13-at-9.16.21-AM-226x300.jpeg" alt="Ms. Ashritha K">
+            <div class="staff-info">
+              <h3>Ms. Ashritha K</h3>
+              <p>Qualification: MCA</p>
+            </div>
+          </article>
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-11-at-9.57.16-AM.jpeg" alt="Mr. Dakshith Shetty">
+            <div class="staff-info">
+              <h3>Mr. Dakshith Shetty</h3>
+              <p>Qualification: MCA</p>
+            </div>
+          </article>
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-11-at-10.42.03-AM.jpeg" alt="Ms. Ashwitha Maria Dsouza">
+            <div class="staff-info">
+              <h3>Ms. Ashwitha Maria Dsouza</h3>
+              <p>Qualification: MCA</p>
+            </div>
+          </article>
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-11-at-10.25.20-AM.jpeg" alt="Ms. Bhavya">
+            <div class="staff-info">
+              <h3>Ms. Bhavya</h3>
+              <p>Qualification: BCA</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="department" aria-labelledby="biology-heading">
+        <h2 id="biology-heading">Biology</h2>
+        <div class="staff-grid">
+          <article class="staff-card">
+            <img src="https://srimahaveeracollege.com/wp-content/uploads/2026/09/Archana-photo-791x1024.jpeg" alt="Ms. Archana V. A.">
+            <div class="staff-info">
+              <h3>Ms. Archana V. A.</h3>
+              <p>Qualification: M.Sc.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <a class="back-link" href="first.html">Back to Home</a>
+    </main>
+  </div>
+</body>
+</html>
