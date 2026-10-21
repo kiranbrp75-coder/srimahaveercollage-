@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sri Mahaveera College | Moodbidri</title>
+  <style>
+    :root {
+      --green: #8432b6;
+      --green-dark: #261348;
+      --light: #f7f9f3;
+      --text: #172639;
+      --card: rgba(255, 255, 255, 0.72);
+      --shadow: rgba(28, 21, 59, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+    }
+
+    body {
+      position: relative;
+      isolation: isolate;
+      background: var(--light);
+    }
+
+    .background-video {
+      position: fixed;
+      z-index: -2;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    body::before {
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.3);
+      content: "";
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      width: min(1100px, 92%);
+      margin: 60px auto;
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 24px;
+      box-shadow: 0 18px 45px var(--shadow);
+      backdrop-filter: blur(2px);
+      overflow: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 36px;
+      background: rgba(255, 255, 255, 0.42);
+      border-bottom: 1px solid rgba(23, 88, 72, 0.12);
+    }
+
+    .brand {
+      font-size: clamp(1.3rem, 2vw, 2rem);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--green-dark);
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      padding: 48px 36px 36px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      line-height: 1.08;
+      color: var(--green-dark);
+    }
+
+    .hero p {
+      margin: 0 0 26px;
+      font-size: 1.08rem;
+      line-height: 1.8;
+      color: #383552;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.74);
+      color: var(--green-dark);
+      border: 1px solid rgba(26, 93, 73, 0.16);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .image-box {
+      background: rgba(255, 255, 255, 0.48);
+      border: 1px solid rgba(23, 88, 72, 0.14);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 12px 28px rgba(19, 72, 53, 0.12);
+    }
+
+    .image-box img {
+      display: block;
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .highlights {
+      padding: 20px 36px 48px;
+    }
+
+    .highlights h2 {
+      margin: 0 0 20px;
+      color: var(--green-dark);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .highlight-card {
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(23, 88, 72, 0.12);
+      border-radius: 16px;
+    }
+
+    .highlight-card h3 {
+      margin: 0 0 8px;
+      color: var(--green-dark);
+      font-size: 1.08rem;
+    }
+
+    .highlight-card p {
+      margin: 0;
+      line-height: 1.7;
+      color: #393552;
+    }
+
+    @media (max-width: 780px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        padding: 36px 22px 28px;
+      }
+
+      .highlights {
+        padding: 16px 22px 32px;
+      }
+
+      .image-box img {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <video class="background-video" autoplay loop muted playsinline preload="auto" aria-hidden="true" tabindex="-1">
+    <source src="Sri Mahaveera College Short Clip(2022-23).mp4" type="video/mp4" />
+  </video>
+
+  <div class="container">
+    <header>
+      <a class="brand" href="first.html">SMC MOODBIDRI</a>
+      <nav>
+        <a href="about-school.html">About</a>
+        <a href="our-campus.html">Campus</a>
+        <a href="discover-our-school.html">Discover</a>
+        <a href="teaching-staff.html">Staff</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section>
+        <p class="eyebrow">Established July 9, 1965 · Moodbidri, Karnataka</p>
+        <h1>Sri Mahaveera College</h1>
+        <p>
+          Sri Mahaveera College, Moodbidri, is a leading public educational hub
+          in Karnataka. Driven by a mission of selflessness and community
+          upliftment, the college was founded by Dr. T.M.A. Pai and
+          Sri S.N. Moodbidri to bring higher education to rural youth.
+        </p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="about-school.html">Discover Our Story</a>
+          <a class="btn btn-secondary" href="our-campus.html">Our Campus</a>
+        </div>
+      </section>
+
+      <div class="image-box">
+        <img src="school-background.png" alt="Sri Mahaveera College campus" />
+      </div>
+    </main>
+
+    <section class="highlights" aria-labelledby="highlights-title">
+      <h2 id="highlights-title">A college rooted in community</h2>
+      <div class="highlight-grid">
+        <article class="highlight-card">
+          <h3>Rich heritage</h3>
+          <p>
+            Founded by pioneering visionaries Dr. T.M.A. Pai and
+            Sri S.N. Moodbidri to bring higher education to rural youth.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Quality credentials</h3>
+          <p>
+            Affiliated with Mangalore University and accredited with an 'A' grade
+            by NAAC.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>The Mahaveera philosophy</h3>
+          <p>
+            Operating on a no-profit, no-loss basis to help keep quality
+            education financially affordable.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>A spacious campus</h3>
+          <p>
+            The resource-rich 23-acre campus focuses on student mentoring,
+            skill development, and holistic success.
+          </p>
+        </article>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
